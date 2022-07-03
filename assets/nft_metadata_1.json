@@ -1,0 +1,15 @@
+{
+    "attributes": [
+        {
+            "trait_type": "Brand",
+            "value": "Gucci"
+        },
+        {
+            "trait_type": "Material",
+            "value": "Silk from Japan"
+        }
+    ],
+    "description": "The world's best NFT",
+    "image": "https://gateway.pinata.cloud/ipfs/QmTMWjohiPf75PvVB1BVe41JV21LR9Zk1FVpB3qQXL2Yjg",
+    "name": "Ownable NFT"
+}

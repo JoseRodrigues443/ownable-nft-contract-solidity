@@ -1,0 +1,31 @@
+name: Merge CI
+
+on: [push, pull_request]
+
+jobs:
+  lint:
+    name: Lint Node and Solidity Code
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm install
+      - name: Lint JS/TS
+        run: make eslint
+      - name: Lint Solidity
+        run: make solhint
+  test:
+    name: Run tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm install
+      - name: Compile
+        run: make compile
+      - name: Test
+        run: make test
